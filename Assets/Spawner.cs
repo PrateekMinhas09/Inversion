@@ -26,17 +26,14 @@ public class Spawner : MonoBehaviour
         // Create a new instance of the object to spawn
         GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
 
-        // Make the spawned object move to the left
         Rigidbody2D rb = spawnedObject.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.velocity = new Vector2(-moveSpeed, 0);
-        }
-        else
-        {
-            Debug.LogWarning("Spawned object doesn't have a Rigidbody2D component.");
-        }
+        rb.velocity = Vector2.left*moveSpeed;
+        
+
     }
+
+   
 }
+
 
 
