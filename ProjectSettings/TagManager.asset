@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Boundary
+  - enemy_stone
+  - enemy_paper
+  - enemy_scissor
   layers:
   - Default
   - TransparentFX

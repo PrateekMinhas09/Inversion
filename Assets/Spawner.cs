@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject objectToSpawn;
+    public GameObject[] objectsToSpawn;
+   
     public float spawnRate = 2.0f;  // Time between spawns
     public float moveSpeed = 5.0f; // Speed of the spawned object
     private float nextSpawnTime = 0.0f;
@@ -24,7 +25,9 @@ public class Spawner : MonoBehaviour
     void SpawnObject()
     {
         // Create a new instance of the object to spawn
-        GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+
+        int rando = Random.Range(0, objectsToSpawn.Length);
+        GameObject spawnedObject = Instantiate(objectsToSpawn[rando], transform.position, Quaternion.identity);
 
         Rigidbody2D rb = spawnedObject.GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.left*moveSpeed;
